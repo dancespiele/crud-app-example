@@ -1,0 +1,1 @@
+export { MainPageController as MainPage } from './MainPage/MainPageController';
