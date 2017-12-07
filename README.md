@@ -27,6 +27,12 @@ Enter to the folder and execute:
 
 ## Run
 
+Create config.ts file in the root directory like this:
+```typescript
+    export const googleToken = 'YOUR TOKEN FOR GOOGLE MAP';
+```
+
+
 Now run:
 
 `npm run watch`

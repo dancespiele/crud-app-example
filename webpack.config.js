@@ -6,13 +6,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 	entry: path.resolve(__dirname, './app/index'),
 	devtool: 'source-map',
+
 	output: {
 		path: path.resolve(__dirname, './dist'),
 		filename: 'app.bundle.js'
 	},
 
 	resolve: {
-		extensions: ['.ts', '.tsx', '.js', '.jsx']
+		extensions: ['.ts', '.tsx', '.js', '.jsx'],
+		alias: {
+			'config': path.resolve(__dirname, './config')
+		}
 	},
 
 	module: {
@@ -49,6 +53,9 @@ module.exports = {
 		}),
 		new HtmlWebpackPlugin({
 			title: 'Crud example'
+		}),
+		new webpack.ProvidePlugin({
+			'config': 'config'
 		})
 	]
 }

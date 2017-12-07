@@ -1,7 +1,9 @@
 const scriptTag = document.createElement('script');
-const googleToken = 'AIzaSyCKKPYuxP2XG4wB0lUdgWLGy3XFH_ec9Tc'
+declare const config: {
+    googleToken: string
+};
 
-const scriptSrc = `https:///maps.googleapis.com/maps/api/js?key=${googleToken}`;
+const scriptSrc = `https:///maps.googleapis.com/maps/api/js?key=${config.googleToken}`;
 
 scriptTag.setAttribute('src', scriptSrc);
 scriptTag.setAttribute('async', '');
