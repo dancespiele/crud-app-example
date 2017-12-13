@@ -2,11 +2,13 @@ import { m } from 'pyrite';
 
 export class PostsService {
 
-    public getUsers(): Promise<any> {
-        return m.request({
+    public async getUsers(): Promise<any> {
+        const users = await m.request({
             method: "GET",
             url: "https://jsonplaceholder.typicode.com/users"
-        }).then(users => users);
+        });
+
+        return users;
     }
 
     public async getPosts(): Promise<any> {
